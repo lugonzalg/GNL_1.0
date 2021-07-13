@@ -72,13 +72,11 @@ char	*cutstr(char *str, unsigned int begin, size_t length, int on)
 	i = 0;
 	if (!str)
 		return (NULL);
-	if (on && !str[len_c(str, 0)] && !str[len_c(str, '\n')])
+	if (on && !ft_strchr(str, '\n'))
 	{
 		free(str);
 		return (NULL);
 	}
-	if (on)
-		length -= len_c(str, '\n');
 	new_str = malloc(sizeof(char) * (length + 1));
 	if (!new_str)
 		return (NULL);

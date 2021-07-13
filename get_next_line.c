@@ -42,7 +42,7 @@ int	get_next_line(int fd, char **line)
 		str = ft_strjoin(str, buffer);
 	}
 	*line = cutstr(str, 0, len_c(str, '\n'), 0);
-	str = cutstr(str, len_c(str, '\n') + 1, len_c(str, 0), 1);
+	str = cutstr(str, len_c(str, '\n') + 1, len_c(str, 0) - len_c(*line, 0), 1);
 	free(buffer);
 	if (!size)
 		return (0);
